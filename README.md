@@ -228,11 +228,21 @@ O sistema apresenta boa escalabilidade inicial, mas possui limite de capacidade.
 
 ### 🔹 Falhas
 
-- 0 falhas em 10 e 100 usuários  
-- Falhas surgem em 1000 usuários
-- 
-As falhas registradas com 1000 usuários foram majoritariamente erros de Connection Reset e Timeout, indicando que o gargalo saturou a pilha TCP do servidor web ou o limite de descritores de arquivos do SO, e não apenas lentidão na aplicação.
+- 10 usuários → 0 falhas  
+- 100 usuários → 0 falhas  
+- 1000 usuários → início de falhas  
 
+As falhas registradas com 1000 usuários foram majoritariamente erros de **Connection Reset** e **Timeout**, indicando saturação do sistema sob alta concorrência.
+
+Esse comportamento sugere que o gargalo não está apenas na lógica da aplicação, mas também em limitações de infraestrutura, como:
+
+- limite de conexões simultâneas  
+- saturação da pilha TCP  
+- limite de descritores de arquivos do sistema operacional  
+
+#### 📌 Interpretação
+
+O sistema mantém estabilidade em cargas baixas e moderadas, mas começa a apresentar falhas apenas sob **alta carga (1000 usuários)**, caracterizando um ponto de degradação do serviço.
 #### 📌 Interpretação
 
 O sistema mantém estabilidade até carga moderada, mas degrada sob alta concorrência.
