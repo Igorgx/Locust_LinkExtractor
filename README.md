@@ -229,7 +229,9 @@ O sistema apresenta boa escalabilidade inicial, mas possui limite de capacidade.
 ### 🔹 Falhas
 
 - 0 falhas em 10 e 100 usuários  
-- Falhas surgem em 1000 usuários  
+- Falhas surgem em 1000 usuários
+- 
+As falhas registradas com 1000 usuários foram majoritariamente erros de Connection Reset e Timeout, indicando que o gargalo saturou a pilha TCP do servidor web ou o limite de descritores de arquivos do SO, e não apenas lentidão na aplicação.
 
 #### 📌 Interpretação
 
@@ -244,6 +246,8 @@ O sistema mantém estabilidade até carga moderada, mas degrada sob alta concorr
 #### 📌 Explicação
 
 O uso de URLs diferentes impede o reaproveitamento do cache, reduzindo seu impacto.
+
+Embora o cache tenha sido menos efetivo devido à variedade de URLs, no cenário de 1000 usuários, ele ajudou a reduzir o 'overhead' de processamento local, evitando que as instâncias de Python/Ruby ficassem presas em chamadas de I/O de rede simultâneas, o que explica a menor taxa de falhas no Python com Cache.
 
 ---
 
@@ -274,6 +278,7 @@ A linguagem não foi o principal fator de desempenho.
 
 ### 🎯 Conclusão Final
 
+> Embora as médias de tempo sejam próximas, o Python demonstrou maior robustez (resiliência), mantendo uma taxa de sucesso superior ao Ruby sob estresse extremo.
 > O principal fator de impacto no desempenho foi a quantidade de usuários simultâneos.
 
 ---
