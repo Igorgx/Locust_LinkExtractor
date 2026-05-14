@@ -235,7 +235,7 @@ O sistema mantém estabilidade até carga moderada, mas degrada sob alta concorr
 
 ### 🔹 Cache (Redis)
 
-- Diferença mínima entre com e sem cache  
+- Diferença mínima entre com e sem cache no testes de 10 e 100. Com 1000 usuários, a diferença com cache fica clara.
 
 #### 📌 Explicação
 
