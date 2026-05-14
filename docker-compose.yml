@@ -1,0 +1,34 @@
+services:
+  api-python:
+    build: ./step4/api 
+    ports:
+      - "5000:5000"
+    environment:
+      - REDIS_URL=redis://redis:6379
+
+  api-ruby:
+    build: ./step6/api
+    ports:
+      - "4567:4567"
+    environment:
+      - REDIS_URL=redis://redis:6379
+
+  redis:
+    image: redis:alpine
+
+  web:
+    build: ./step6/www
+    ports:
+      - "80:80"
+    environment:
+      - API_ENDPOINT=http://api-ruby:4567/api/
+
+  locust:
+    image: grubykarol/locust
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./:/locust
+    environment:
+      - ATTACKED_HOST=http://web
+      - LOCUST_FILE=locustfile.py
