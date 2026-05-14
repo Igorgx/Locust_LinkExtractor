@@ -257,8 +257,7 @@ A linguagem não foi o principal fator de desempenho.
 ## ⚠️ 7. Limitações do Experimento
 
 - Cache pouco efetivo devido a URLs distintas  
-- Influência da latência de rede externa  
-- Ausência de cenário de cache aquecido  
+- Influência da latência de rede externa    
 
 ---
 
@@ -266,7 +265,7 @@ A linguagem não foi o principal fator de desempenho.
 
 - O sistema apresenta boa escalabilidade inicial  
 - Há degradação sob alta carga  
-- O cache não impactou significativamente neste cenário  
+- O cache não impactou significativamente no cenário pequeno e médio, mas sim no grande até a falha.
 - A linguagem teve influência limitada  
 
 ### 🎯 Conclusão Final
