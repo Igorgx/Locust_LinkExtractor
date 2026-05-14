@@ -214,7 +214,11 @@ Os resultados foram exportados em arquivos CSV e analisados com Python (pandas +
 ### 🔹 Escalabilidade (RPS)
 
 - Crescimento significativo até 100 usuários  
-- Crescimento reduzido até 1000 usuários  
+- Crescimento reduzido até 1000 usuários
+
+### Percentil
+
+Além da média e mediana, também foram analisados percentis (90%, 95% e 99%), que evidenciam o impacto de requisições mais lentas sob alta carga.
 
 #### 📌 Interpretação
 
