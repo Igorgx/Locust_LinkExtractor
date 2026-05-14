@@ -124,37 +124,37 @@ Os resultados foram exportados em arquivos CSV e analisados com Python (pandas +
 
 ### 🔹 Tempo Médio de Resposta
 
-![Tempo Médio](graficos/tempo_medio.png)
+![Tempo Médio](graficos/graficos/falhas.png)
 
 ---
 
 ### 🔹 Mediana do Tempo de Resposta
 
-![Mediana](graficos/mediana.png)
+![Mediana](graficos/graficos/mediana.png)
 
 ---
 
 ### 🔹 Requisições por Segundo (RPS)
 
-![RPS](graficos/rps.png)
+![RPS](graficos/graficos/rps.png)
 
 ---
 
 ### 🔹 Número de Falhas
 
-![Falhas](graficos/falhas.png)
+![Falhas](graficos/graficos/falhas.png)
 
 ---
 
 ### 🔹 Comparação Python (Cache vs Sem Cache)
 
-![Python](graficos/python_comparacao.png)
+![Python](graficos/graficos/python_comparacao.png)
 
 ---
 
 ### 🔹 Comparação Ruby (Cache vs Sem Cache)
 
-![Ruby](graficos/ruby_comparacao.png)
+![Ruby](graficos/graficos/ruby_comparacao.png)
 
 ---
 
